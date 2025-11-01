@@ -1,7 +1,5 @@
 CREATE DATABASE cyber;
 USE cyber;
-alter user 'root'@'localhost' identified with 'mysql_native_password'by 'Dhanush@silver';
-flush privileges;
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE,
@@ -9,10 +7,6 @@ CREATE TABLE users (
   password_hash VARCHAR(255) NOT NULL,
   create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-SELECT id, username, email, password_hash FROM users;
-
-DROP TABLE IF EXISTS crypto_wallets;
 
 CREATE TABLE crypto_wallets(
 wallet_id INT auto_increment PRIMARY KEY,
@@ -35,5 +29,3 @@ notes text,
 created_at timestamp default current_timestamp,
 foreign key(user_id) references users(id) on delete cascade
 );
-
-show databases;
