@@ -1630,9 +1630,9 @@ app.jinja_env.filters['format_percentage'] = format_percentage
 def get_db_connection():
     return mysql.connector.connect(
         host=os.getenv("DB_HOST", "localhost"),
-        user=os.getenv("DB_USER", "root"),
-        password=os.getenv("DB_PASS", "pass"),
-        database=os.getenv("DB_NAME", "cyber"),
+        user=os.getenv("DB_USER", "USER_NAME"),
+        password=os.getenv("DB_PASS", "YOUR_PASSWORD"),
+        database=os.getenv("DB_NAME", "DATABASE_NAME"),
         autocommit=False
     )
 
@@ -2012,4 +2012,5 @@ def ai_password():
                            ai_mode=AI_MODE)
 
 if __name__ == "__main__":
+
     app.run(debug=True)
