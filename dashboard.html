@@ -1,0 +1,524 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <!-- Hero Section -->
+  <div class="hero-section text-center mb-5">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome back, <span class="text-gradient">{{ user }}!</span> 👋</h1>
+      <p class="hero-subtitle">Protect your digital identity with our comprehensive security toolkit</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Security Tools</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Protection</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Secure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools Grid -->
+  <div class="tools-section mb-5">
+    <h2 class="section-title">🔧 Security Tools</h2>
+    <p class="section-subtitle">Choose a tool to enhance your cybersecurity</p>
+    
+    <div class="tools-grid">
+      <!-- Credentials Tool -->
+      <div class="tool-card tool-card-credentials">
+        <div class="tool-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="tool-content">
+          <h3>Credential Scanner</h3>
+          <p>Check if your email, phone number, or password has been compromised in data breaches</p>
+          <ul class="tool-features">
+            <li>🔍 HIBP Database Search</li>
+            <li>📧 Email & Phone Validation</li>
+            <li>🚨 Breach Alerts</li>
+          </ul>
+          <a href="{{ url_for('credentials') }}" class="btn-tool">
+            Scan Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Crypto Tool -->
+      <div class="tool-card tool-card-crypto">
+        <div class="tool-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <div class="tool-content">
+          <h3>Crypto Wallet Analyzer</h3>
+          <p>Analyze cryptocurrency wallets for suspicious activity and risk assessment</p>
+          <ul class="tool-features">
+            <li>💰 Real-time Balance Check</li>
+            <li>📊 Transaction Analysis</li>
+            <li>⚠️ Risk Scoring</li>
+          </ul>
+          <a href="{{ url_for('crypto') }}" class="btn-tool">
+            Analyze Wallet <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI Password Tool -->
+      <div class="tool-card tool-card-ai">
+        <div class="tool-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="tool-content">
+          <h3>AI Password Generator</h3>
+          <p>Generate strong passwords and analyze password strength using artificial intelligence</p>
+          <ul class="tool-features">
+            <li>🤖 AI-Powered Generation</li>
+            <li>🔐 Strength Analysis</li>
+            <li>💡 Smart Suggestions</li>
+          </ul>
+          <a href="{{ url_for('ai_password') }}" class="btn-tool">
+            Generate Password <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Educational Resources -->
+  <div class="resources-section">
+    <h2 class="section-title">🎓 Learn Cybersecurity</h2>
+    <p class="section-subtitle">Watch these helpful videos to enhance your security knowledge</p>
+    
+    <div class="videos-grid">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="https://img.youtube.com/vi/bPVaOlJ6ln0/maxresdefault.jpg" alt="Password Security">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="video-content">
+          <h4>Creating Strong Passwords</h4>
+          <p>Learn how to create and manage secure passwords that protect your accounts</p>
+          <a href="https://www.youtube.com/watch?v=bPVaOlJ6ln0" target="_blank" class="btn-video">
+            Watch Now <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="https://img.youtube.com/vi/4eTC4O7zjjM/maxresdefault.jpg" alt="Data Breaches">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="video-content">
+          <h4>Understanding Data Breaches</h4>
+          <p>How data breaches happen and how to protect yourself from them</p>
+          <a href="https://www.youtube.com/watch?v=4eTC4O7zjjM" target="_blank" class="btn-video">
+            Watch Now <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="https://img.youtube.com/vi/JIJslcA8Q5g/maxresdefault.jpg" alt="Crypto Security">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="video-content">
+          <h4>Crypto Wallet Security</h4>
+          <p>Best practices for securing your cryptocurrency wallets and assets</p>
+          <a href="https://www.youtube.com/watch?v=JIJslcA8Q5g" target="_blank" class="btn-video">
+            Watch Now <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="https://img.youtube.com/vi/9wbn7IdP_8I/maxresdefault.jpg" alt="Online Privacy">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="video-content">
+          <h4>Digital Privacy Basics</h4>
+          <p>Essential tips for maintaining your privacy and security online</p>
+          <a href="https://www.youtube.com/watch?v=9wbn7IdP_8I" target="_blank" class="btn-video">
+            Watch Now <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">10B+</div>
+          <div class="stat-label">Records Monitored</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">256-bit</div>
+          <div class="stat-label">Encryption</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">Real-time</div>
+          <div class="stat-label">Analysis</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">Global</div>
+          <div class="stat-label">Coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 60px 40px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #ffd89b, #19547b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Section Styles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+/* Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e1e8ed;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.tool-card-credentials::before { background: linear-gradient(45deg, #ff6b6b, #ee5a24); }
+.tool-card-crypto::before { background: linear-gradient(45deg, #74b9ff, #0984e3); }
+.tool-card-ai::before { background: linear-gradient(45deg, #a29bfe, #6c5ce7); }
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tool-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.tool-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.tool-card p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tool-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.tool-features li {
+  padding: 8px 0;
+  color: #5a6c7d;
+}
+
+.btn-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-tool:hover {
+  transform: translateX(5px);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Videos Grid */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.video-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.video-thumbnail {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e74c3c;
+  font-size: 1.2rem;
+}
+
+.video-content {
+  padding: 20px;
+}
+
+.video-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.video-content p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.btn-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-video:hover {
+  background: #c0392b;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e1e8ed;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.stat-info .stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.stat-info .stat-label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    gap: 30px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}

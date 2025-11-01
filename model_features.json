@@ -1,0 +1,25 @@
+{
+  "feature_columns": [
+    "transaction_count",
+    "unique_counterparties",
+    "avg_transaction_value",
+    "balance_eth",
+    "transaction_velocity",
+    "amount_std_dev",
+    "time_between_tx_hours",
+    "high_value_tx_ratio",
+    "counterparty_entropy"
+  ],
+  "feature_importance": {
+    "transaction_count": 0.10661386698484421,
+    "unique_counterparties": 0.10273033380508423,
+    "avg_transaction_value": 0.11138451844453812,
+    "balance_eth": 0.11313528567552567,
+    "transaction_velocity": 0.11340153962373734,
+    "amount_std_dev": 0.11936677992343903,
+    "time_between_tx_hours": 0.11072269827127457,
+    "high_value_tx_ratio": 0.1105303093791008,
+    "counterparty_entropy": 0.11211463063955307
+  },
+  "training_accuracy": 0.681
+}
